@@ -63,3 +63,36 @@ $$(document).on('page:init', function (e) {
     // Do something here when page loaded and initialized
     console.log(e);
 })
+
+function enviarLogin(){
+  console.log("paso por login");
+  var frut= document.getElementById("rut").value;
+  var fpass= document.getElementById("pass").value;
+
+  console.log(frut);
+  console.log(fpass);
+  document.getElementById("rut").value="";
+  document.getElementById("pass").value="";
+
+  $.ajax({
+      type:"POST",
+      url: "http://localhost/sosappweb/login",
+      data: ({rut: frut, pass: fpass}),
+      cache: false,
+      dataType: "text",
+      
+
+      success:  function(data){
+          alert(data);
+          
+         var mensaje= data; 
+       
+         console.log(mensaje);
+           if(mensaje == "Ha iniciado sesión"){
+            app.router.navigate("/inicio/");
+          }
+  
+      }
+  });
+  
+};
