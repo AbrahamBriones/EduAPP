@@ -15,6 +15,5 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <access onlyInBrowser="true" origin="*" />
     <preference name="DisallowOverscroll" value="true" />
 </widget>

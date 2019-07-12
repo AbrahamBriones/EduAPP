@@ -66,6 +66,7 @@ $$(document).on('page:init', function (e) {
 
 function enviarLogin(){
   console.log("paso por login");
+  navigator.vibrate(800);
   var frut= document.getElementById("rut").value;
   var fpass= document.getElementById("pass").value;
 
